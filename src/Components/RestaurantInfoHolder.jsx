@@ -1,19 +1,22 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import logo from '../Assets/logo.jpg';
 
 
-export default function RestaurantInfoHolder(props){
+export default function RestaurantInfoHolder({data}){
 
-    return <Card style={{ width: '18rem' }}>
-    <Card.Img variant="top" src="" />
-    <Card.Body>
-      <Card.Title>Card Title</Card.Title>
+    return <Card style={{ width: '100%'}} classname="rounded p-2">
+    <Card.Img src={logo} thumbnail  />
+   
+    <Card.Body className="">
+      <Card.Title>{data.restaurantName} </Card.Title>
       <Card.Text>
-        Some quick example text to build on the card title and make up the
-        bulk of the card's content
+        Some Info
       </Card.Text>
-      <Button variant="secondary">Go somewhere</Button>
+      <Button variant="secondary p-2 ">Visit Website ?</Button>
     </Card.Body>
+   
+
   </Card>
 
 }

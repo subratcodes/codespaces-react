@@ -3,17 +3,20 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import RestaurantInfoHolder from '../Components/RestaurantInfoHolder';
 
+export default function Restaurants({data}){
 
-export default function Restaurants(){
-
-    return <Container fluid>
+    return <Container>
 
         <Row>
-        <Col><RestaurantInfoHolder></RestaurantInfoHolder></Col>
-        <Col><RestaurantInfoHolder></RestaurantInfoHolder></Col>
-        <Col><RestaurantInfoHolder></RestaurantInfoHolder></Col>
-        <Col><RestaurantInfoHolder></RestaurantInfoHolder></Col>
-        <Col><RestaurantInfoHolder></RestaurantInfoHolder></Col>
+          {data.restaurants?data.restaurants.map((val,index)=>{
+            
+            return(<Col key={index} className="p-2" lg={4}>
+
+            <RestaurantInfoHolder data={val}></RestaurantInfoHolder>
+
+            </Col>)
+          }):null}
+
       </Row>
 
     </Container>
